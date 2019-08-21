@@ -1,0 +1,46 @@
+server:
+  port: 8090
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:mysql://192.168.182.129:3306/qingcheng_goods?characterEncoding=UTF-8
+    username: root
+    password: chen321
+    driver-class-name: com.mysql.jdbc.Driver
+
+  # dubbo的配置
+  dubbo:
+    # dubbo中的服务名称
+    application: goods-service
+    protocol:
+      # dubbo的通讯协议名称
+      name: dubbo
+    registry:
+      # zookeeper注册中心的地址
+      address: 192.168.182.129:2181
+      # zookeeper的通讯协议的名称
+      protocol: zookeeper
+      # dubbo的服务的扫描路径
+    base-package: com.qc
+
+
+
+mybatis:
+  type-aliases-package: com.qc.pojo
+  #mapper.xml的路径
+  mapper-locations: classpath*:mappers/goods/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+mapper:
+  not-empty: false
+  identity: mysql
+
+#日志级别
+logging:
+  level:
+    root=debug: debug
+
+
+

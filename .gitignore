@@ -1,0 +1,10 @@
+/target/
+.project
+.idea
+.settings
+.classpath
+*.iml
+/qc-service-goods/target
+.metadata
+.recommenders
+*.log
