@@ -5,7 +5,7 @@ spring:
     active: dev
 
   datasource:
-    url: jdbc:mysql://192.168.182.129:3306/qingcheng_goods?characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.182.129:3306/qingcheng_goods?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: chen321
     driver-class-name: com.mysql.jdbc.Driver
