@@ -54,4 +54,24 @@ public class BrandServiceImpl implements IBrandService {
 
         return BaseModel.selectByPage(brandMapper, example, request.getPage());
     }
+
+    @Override
+    public void saveBrand(Brand brand) {
+        brandMapper.insertSelective(brand);
+    }
+
+    @Override
+    public Brand getBrandById(Integer brandId) {
+        return brandMapper.selectByPrimaryKey(brandId);
+    }
+
+    @Override
+    public void updateBrand(Brand brand) {
+        brandMapper.updateByPrimaryKey(brand);
+    }
+
+    @Override
+    public void deleteBrandById(Integer brandId) {
+        brandMapper.deleteByPrimaryKey(brandId);
+    }
 }
